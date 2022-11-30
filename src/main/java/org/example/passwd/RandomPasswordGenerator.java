@@ -1,4 +1,4 @@
-package org.example;
+package org.example.passwd;
 
 import org.passay.CharacterData;
 import org.passay.CharacterRule;

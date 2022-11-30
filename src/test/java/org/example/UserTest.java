@@ -14,7 +14,20 @@ class UserTest {
         User user = new User();
         //when
         user.initPasswd(new CorrectFixedPasswordGenerator());
+        //user.initPasswd(() -> "12345678");
         //then
         assertThat(user.getPasswd()).isNotNull();
+    }
+
+    @DisplayName("패스워드가 요구사항에 부합하지않아 초기화가 되지 않는다")
+    @Test
+    void passwdTest2() {
+        //given
+        User user = new User();
+        //when
+        user.initPasswd(new WrongFixedPasswordGenerator());
+        //user.initPasswd(() -> "123");
+        //then
+        assertThat(user.getPasswd()).isNull();
     }
 }

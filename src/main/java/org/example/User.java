@@ -3,8 +3,9 @@ package org.example;
 public class User {
     public String passwd;
     public void initPasswd(PasswordGenerator passwordGenerator){
- //리팩토링전
+ //as-is
  //     RandomPasswordGenerator randomPasswordGenerator = new RandomPasswordGenerator();
+ //to-be
         String password = passwordGenerator.generatePassword();
         /*
             비밀번호는 8자이상 12자 이하여야한다
