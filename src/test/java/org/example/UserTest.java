@@ -13,7 +13,7 @@ class UserTest {
         //given
         User user = new User();
         //when
-        user.initPasswd();
+        user.initPasswd(new CorrectFixedPasswordGenerator());
         //then
         assertThat(user.getPasswd()).isNotNull();
     }

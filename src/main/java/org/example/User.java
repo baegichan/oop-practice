@@ -2,15 +2,16 @@ package org.example;
 
 public class User {
     public String passwd;
-    public void initPasswd(){
-        RandomPasswordGenerator randomPasswordGenerator = new RandomPasswordGenerator();
-        String randomPasswd = randomPasswordGenerator.generatePassword();
+    public void initPasswd(PasswordGenerator passwordGenerator){
+ //리팩토링전
+ //     RandomPasswordGenerator randomPasswordGenerator = new RandomPasswordGenerator();
+        String password = passwordGenerator.generatePassword();
         /*
             비밀번호는 8자이상 12자 이하여야한다
 
          */
-        if(randomPasswd.length()>= 8 && randomPasswd.length() <=12) {
-            this.passwd=randomPasswd;
+        if(password.length()>= 8 && password.length() <=12) {
+            this.passwd=password;
         }
 
     }
